@@ -1,0 +1,98 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*, *:before, *:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus, :active{outline: none;}
+a:focus, a:active{outline: none;}
+nav, footer, header, aside{display: block;}
+html, body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input, button, textarea{font-family: inherit;}
+input::-ms-clear{display: none;} /*убирает крестик в поле input в браузере интернет эксплорер*/
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0; border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1, h2, h3, h4, h5, h6{font-size: inherit; font-weight: 400;}
+
+
+
+
+
+body{
+    background-color: lightgray;
+}
+
+
+h2{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 15em;
+    margin-top: 10%;
+
+    /* border: 10px solid red; */
+}
+
+.block{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    height: 100px;
+
+    /* border: 10px solid green; */
+}
+
+.section{
+    width: 24%;
+    background-color: white;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 1em 1em 0 0;    
+    overflow: hidden;
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
+}
+
+.section__name{
+    padding: 0.4em;
+    height: 30px;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: rgb(142, 201, 241);
+
+    /* border: 2px solid yellow; */
+
+}
+
+
+
+
+.section__value{
+
+    margin: center auto;
+    padding: 0.2em;
+    height: 70px;
+    font-size: 3em;
+    
+    
+    
+
+
+    /* border: 10px solid green; */
+}
