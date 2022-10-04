@@ -21,10 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
   modalButton.addEventListener("mouseover", (event) => {
-    event.target.style.cursor = "grab";
-    modalButton.addEventListener("mousedown", (event) => {
-      event.target.style.cursor = "grabbing";
-    })  
+    event.target.style.cursor = "pointer";    
   });
 
   modalButton.addEventListener("click", (event) => {
