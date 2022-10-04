@@ -1,6 +1,4 @@
 window.addEventListener("DOMContentLoaded", () => {
-  
-  alert("Запустить приложение?");
 
 
   const nameRef = document.querySelector(".name");
@@ -15,9 +13,27 @@ window.addEventListener("DOMContentLoaded", () => {
   // console.log(eventKeyRef);
   const sectionRef = document.querySelectorAll(".section");
   // console.log(sectionRef);
+  const activeModalRef = document.querySelector(".js_active-modal");
+  console.log(activeModalRef);
+  const modalButton = document.querySelector(".modal__button");
+  console.log(modalButton);
 
 
 
+  modalButton.addEventListener("mouseover", (event) => {
+    event.target.style.cursor = "grab";
+    modalButton.addEventListener("mousedown", (event) => {
+      event.target.style.cursor = "grabbing";
+    })  
+  });
+
+  modalButton.addEventListener("click", (event) => {
+    // console.log(event.target);    
+    if (event.target) {
+      activeModalRef.style.display = "none";
+    };
+  });
+  
 
   window.addEventListener("keydown", (event) => {
     nameRef.innerText = event.keyCode;
