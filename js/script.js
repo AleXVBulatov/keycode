@@ -1,47 +1,70 @@
 window.addEventListener("DOMContentLoaded", () => {
 
 
-  const nameRef = document.querySelector(".name");
-  // console.log(nameRef);
-  const eventTypeRef = document.querySelector(".js_event-type");
-  // console.log(eventTypeRef);
-  const eventCodeRef = document.querySelector(".js_event-code");
-  // console.log(eventCodeRef);
-  const eventKeyCodeRef = document.querySelector(".js_event-keyCode");
-  // console.log(eventKeyCodeRef);
-  const eventKeyRef = document.querySelector(".js_event-key");
-  // console.log(eventKeyRef);
-  const sectionRef = document.querySelectorAll(".section");
-  // console.log(sectionRef);
-  const activeModalRef = document.querySelector(".js_active-modal");
-  console.log(activeModalRef);
-  const modalButton = document.querySelector(".modal__button");
-  console.log(modalButton);
+  const refs = {
+    nameKeydown: document.querySelector(".js-keydown__name"),
+    eventTypeKeydown: document.querySelector(".js-keydown__event-type"),
+    eventCodeKeydown: document.querySelector(".js-keydown__event-code"),
+    eventKeyCodeKeydown: document.querySelector(".js-keydown__event-keyCode"),
+    eventKeyKeydown: document.querySelector(".js-keydown__event-key"),
+    
+    nameKeypress: document.querySelector(".js-keypress__name"),
+    eventTypeKeypress: document.querySelector(".js-keypress__event-type"),
+    eventCodeKeypress: document.querySelector(".js-keypress__event-code"),
+    eventKeyCodeKeypress: document.querySelector(".js-keypress__event-keyCode"),
+    eventKeyKeypress: document.querySelector(".js-keypress__event-key"),
+    
+    section: document.querySelectorAll(".section"),
+    activeModal: document.querySelector(".js_active-modal"),
+    modalButton: document.querySelector(".modal__button"),   
+  }
+  // console.log(refs);
 
 
-
-  modalButton.addEventListener("mouseover", (event) => {
+  refs.modalButton.addEventListener("mouseover", (event) => {
     event.target.style.cursor = "pointer";    
   });
 
-  modalButton.addEventListener("click", (event) => {
+  refs.modalButton.addEventListener("click", (event) => {
     // console.log(event.target);    
     if (event.target) {
-      activeModalRef.style.display = "none";
+      refs.activeModal.style.display = "none";
+    };
+  });
+
+  refs.modalButton.addEventListener("mouseover", (event) => {
+    if (event.target) {
+      event.target.style.boxShadow = "0px 0px 20px 5px rgba(255, 255, 255, 0.8)";
+    };
+  });
+
+  refs.modalButton.addEventListener("mouseout", (event) => {
+    if (event.target) {
+      event.target.style.boxShadow = "none";
     };
   });
   
 
   window.addEventListener("keydown", (event) => {
-    nameRef.innerText = event.keyCode;
-    eventTypeRef.innerText = event.type;
-    eventCodeRef.innerText = event.code;
-    eventKeyCodeRef.innerText = event.keyCode;
-    eventKeyRef.innerText = event.key;
+    refs.nameKeydown.innerText = event.code;
+    refs.eventTypeKeydown.innerText = event.type;
+    refs.eventCodeKeydown.innerText = event.code;
+    refs.eventKeyCodeKeydown.innerText = event.keyCode;
+    refs.eventKeyKeydown.innerText = event.key;
+  });
+
+  window.addEventListener("keypress", (event) => {
+    refs.nameKeypress.innerText = event.code;
+    refs.eventTypeKeypress.innerText = event.type;
+    refs.eventCodeKeypress.innerText = event.code;
+    refs.eventKeyCodeKeypress.innerText = event.keyCode;
+    refs.eventKeyKeypress.innerText = event.key;
   });
 
 
-  sectionRef.forEach((elem) => {
+
+
+  refs.section.forEach((elem) => {
     // console.log(elem);
     elem.addEventListener("mouseover", (event) => {
       event.currentTarget.style.cursor = "pointer";
@@ -53,6 +76,8 @@ window.addEventListener("DOMContentLoaded", () => {
       event.currentTarget.classList.toggle("active");
     });
   });
+
+
 
 });
 
